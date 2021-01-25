@@ -1,0 +1,23 @@
+spring:
+  cloud:
+    sentinel:
+      eager: true
+      transport:
+        port: 8719
+        dashboard: 192.168.105.71:8080
+      filter:
+        enabled: true
+      datasource.ds1.file:
+        file: "classpath: gw-api-group.json"
+        ruleType: gw-api-group
+      datasource.ds2.file:
+        file: "classpath: flow.json"
+        ruleType: flow #gw-flow
+      datasource.ds3.file:
+        file: "classpath: degrade.json"
+        ruleType: degrade
+        data-type: json
+
+  redis:
+    host: 127.0.0.1
+    port: 6371

@@ -1,0 +1,15 @@
+server:
+  port: 18083
+spring:
+  application:
+    name: service-consumer
+  profiles:
+    active: '@profiles.active@'
+  cloud:
+    nacos:
+      discovery:
+        server-addr: '@nacos.address@'
+        namespace: nacos-example
+        group: ${spring.profiles.active}
+
+management.endpoints.web.exposure.include: "*"

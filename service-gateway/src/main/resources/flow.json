@@ -1,0 +1,18 @@
+[
+  {
+    "resource": "services_api",
+    "controlBehavior": 0,
+    "count": 1,
+    "grade": 1,
+    "limitApp": "default",
+    "strategy": 0
+  },
+  {
+    "resource": "hello_route",
+    "controlBehavior": 0,
+    "count": 1,
+    "grade": 1,
+    "limitApp": "default",
+    "strategy": 0
+  }
+]

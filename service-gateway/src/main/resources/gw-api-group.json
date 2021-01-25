@@ -1,0 +1,13 @@
+[
+  {
+    "apiName": "services_api",
+    "predicateItems": [
+      {
+        "pattern": "/services"
+      },
+      {
+        "pattern": "/services/**"
+      }
+    ]
+  }
+]

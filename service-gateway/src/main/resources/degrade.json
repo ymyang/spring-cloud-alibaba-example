@@ -1,0 +1,18 @@
+[
+  {
+    "resource": "hello_route",
+    "grade": 0,
+    "count": 0.5,
+    "timeWindow": 4,
+    "minRequestAmount": 3,
+    "limitApp": "default"
+  },
+  {
+    "resource": "api_route",
+    "grade": 1,
+    "count": 0.5,
+    "timeWindow": 5,
+    "minRequestAmount": 3,
+    "limitApp": "default"
+  }
+]

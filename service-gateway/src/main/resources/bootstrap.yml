@@ -1,0 +1,40 @@
+server:
+  port: 18080
+spring:
+  application:
+    name: service-gateway
+  profiles:
+    active: '@profiles.active@'
+  cloud:
+    nacos:
+      discovery:
+        server-addr: '@nacos.address@'
+        namespace: nacos-example
+        group: ${spring.profiles.active}
+    gateway:
+      enabled: true
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+      # Add your routes here.
+        - id: hello_route
+          uri: lb://service-provider
+          predicates:
+            - Path=/api/**
+        - id: api_route
+          uri: lb://service-consumer
+          predicates:
+            - Path=/hello/**
+          filters:
+            - name: RequestRateLimiter
+              args:
+                denyEmptyKey: false
+                emptyKeyStatus: SERVICE_UNAVAILABLE
+                keyResolver: '#{@ipAddressKeyResolver}'
+                redis-rate-limiter:
+                  replenishRate: 1
+                  burstCapacity: 2
+
+management.endpoints.web.exposure.include: "*"
