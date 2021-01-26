@@ -1,11 +1,15 @@
 spring:
   cloud:
     sentinel:
+      # 取消Sentinel控制台懒加载
       eager: true
       transport:
+        # 本地应用与Sentinel控制台交互的端口
         port: 8719
+        # Sentinel 控制台地址
         dashboard: 192.168.105.71:8080
       filter:
+        # Enable to instance CommonFilter
         enabled: true
       datasource.ds1.file:
         file: "classpath: gw-api-group.json"

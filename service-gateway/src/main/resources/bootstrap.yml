@@ -12,10 +12,11 @@ spring:
         namespace: nacos-example
         group: ${spring.profiles.active}
     gateway:
-      enabled: true
       discovery:
         locator:
+          # 开启服务注册和发现的功能，并且spring cloud gateway自动根据服务发现为每一个服务创建了一个router，这个router将以服务名开头的请求路径转发到对应的服务
           enabled: true
+          # 服务名配置为小写
           lower-case-service-id: true
       routes:
       # Add your routes here.
@@ -34,7 +35,9 @@ spring:
                 emptyKeyStatus: SERVICE_UNAVAILABLE
                 keyResolver: '#{@ipAddressKeyResolver}'
                 redis-rate-limiter:
+                  # 令牌桶的填充速率，允许用户每秒执行多少请求
                   replenishRate: 1
+                  # 令牌桶的容量，允许用户在一秒钟内执行的最大请求数
                   burstCapacity: 2
 
 management.endpoints.web.exposure.include: "*"

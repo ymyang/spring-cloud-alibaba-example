@@ -1,1 +1,2 @@
+#开启sentinel对feign的支持
 #feign.sentinel.enabled: true
