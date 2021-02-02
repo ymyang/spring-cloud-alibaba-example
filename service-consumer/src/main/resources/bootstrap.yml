@@ -11,10 +11,5 @@ spring:
         server-addr: '@nacos.address@'
         namespace: nacos-example
         group: ${spring.profiles.active}
-  zipkin:
-    base-url: http://127.0.0.1:9411/
-    sender.type: web
-  #采样比例默认的为 0.1可设置介于 0到 1之间，1则表示全部采集
-  sleuth.sampler.probability: 0.1
 
 management.endpoints.web.exposure.include: "*"

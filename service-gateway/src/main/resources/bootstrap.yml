@@ -39,10 +39,5 @@ spring:
                   replenishRate: 1
                   # 令牌桶的容量，允许用户在一秒钟内执行的最大请求数
                   burstCapacity: 2
-  zipkin:
-    base-url: http://127.0.0.1:9411/
-    sender.type: web
-  #采样比例默认的为 0.1可设置介于 0到 1之间，1则表示全部采集
-  sleuth.sampler.probability: 0.1
 
 management.endpoints.web.exposure.include: "*"
