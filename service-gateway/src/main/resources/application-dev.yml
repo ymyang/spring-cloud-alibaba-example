@@ -23,7 +23,7 @@ spring:
         data-type: json
 
   redis:
-    host: 127.0.0.1
+    host: 192.168.105.61
     port: 6371
   zipkin:
     base-url: http://192.168.105.71:9411/

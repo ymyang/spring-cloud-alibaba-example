@@ -20,15 +20,20 @@ spring:
           lower-case-service-id: true
       routes:
       # Add your routes here.
-        - id: hello_route
+        - id: api_provider
           uri: lb://service-provider
           predicates:
-            - Path=/api/**
-        - id: api_route
+            - Path=/provider/**
+          filters:
+            #- SwaggerHeaderFilter
+            - StripPrefix=1
+        - id: api_consumer
           uri: lb://service-consumer
           predicates:
-            - Path=/hello/**
+            - Path=/consumer/**
           filters:
+            #- SwaggerHeaderFilter
+            - StripPrefix=1
             - name: RequestRateLimiter
               args:
                 denyEmptyKey: false
