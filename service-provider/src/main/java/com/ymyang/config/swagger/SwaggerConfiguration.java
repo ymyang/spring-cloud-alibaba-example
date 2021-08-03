@@ -4,6 +4,7 @@ package com.ymyang.config.swagger;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
+import org.springframework.web.bind.annotation.RestController;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -15,9 +16,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2WebMvc;
 
 @Configuration
 @EnableSwagger2WebMvc
-//@EnableSwagger2
-//@EnableSwaggerBootstrapUI
-//@Import(BeanValidatorPluginsConfiguration.class)
 public class SwaggerConfiguration {
 
     @Bean(value = "userApi")
@@ -26,7 +24,9 @@ public class SwaggerConfiguration {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(groupApiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.ymyang.controller"))
+                .apis(RequestHandlerSelectors.withClassAnnotation(RestController.class))
+//                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
+//                .apis(RequestHandlerSelectors.basePackage("com.ymyang.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }

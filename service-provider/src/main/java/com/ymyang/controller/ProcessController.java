@@ -26,7 +26,7 @@ public class ProcessController {
         return processService.page(page);
     }
 
-    @ApiOperation(value = "详情", notes = "作者：xxx")
+//    @ApiOperation(value = "详情", notes = "作者：xxx")
     @GetMapping("/{id}")
     public ProcessEntity detail(@PathVariable("id") int id) {
         return processService.getById(id);
