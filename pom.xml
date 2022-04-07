@@ -11,7 +11,7 @@
         <!--<relativePath/>--> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.ymyang</groupId>
+    <groupId>org.example</groupId>
     <artifactId>spring-cloud-alibaba-example</artifactId>
     <packaging>pom</packaging>
     <version>0.1</version>
@@ -26,7 +26,6 @@
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.test.skip>true</maven.test.skip>
-        <gigaframework.version>2.3.2</gigaframework.version>
         <mybatisplus.version>3.2.0</mybatisplus.version>
         <knife4j.version>2.0.9</knife4j.version>
         <failOnMissingWebXml>false</failOnMissingWebXml>

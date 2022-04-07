@@ -6,7 +6,7 @@
 
     <parent>
         <artifactId>spring-cloud-alibaba-example</artifactId>
-        <groupId>com.ymyang</groupId>
+        <groupId>org.example</groupId>
         <version>0.1</version>
     </parent>
 
